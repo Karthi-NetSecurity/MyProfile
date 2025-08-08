@@ -1,0 +1,65 @@
+if(typeof PAGE.appGroups!=='undefined'){
+	for(var i=0;i<PAGE.appGroups.length;i++){
+		if(PAGE.appGroups[i].group==='preferences'){
+			for(var j=0;j<PAGE.appGroups[i].items.length;j++){
+				if(['password','setlang'].indexOf(PAGE.appGroups[i].items[j].feature)>-1){
+					PAGE.appGroups[i].items.splice(j,1);j--;
+				}
+			}
+		}
+		if(PAGE.appGroups[i].group==='databases'){
+			for(var j=0;j<PAGE.appGroups[i].items.length;j++){
+				if(PAGE.appGroups[i].items[j].feature==='postgres'){
+					PAGE.appGroups[i].items.splice(j,1);j--;
+				}
+			}
+		}
+		if(PAGE.appGroups[i].group==='software'){
+			for(var j=0;j<PAGE.appGroups[i].items.length;j++){
+				if(PAGE.appGroups[i].items[j].feature==='sitereptile'){
+					PAGE.appGroups[i].items[j].url='https://profreehost.com/account?view=builders';
+				}
+			}
+		}
+		/*
+		if(PAGE.appGroups[i].group==='support'){
+			for(var j=0;j<PAGE.appGroups[i].items.length;j++){
+				if(['createticket','ShowTickets'].indexOf(PAGE.appGroups[i].items[j].feature)>-1){
+				PAGE.appGroups[i].items.splice(j,1);j--;
+				}
+				if(PAGE.appGroups[i].items[j].feature==='cloudflare_analytics'){
+					PAGE.appGroups[i].items[j].url='https://profreehost.com/support';
+				}
+			}
+		}
+		*/
+		if(PAGE.appGroups[i].group==='soft_div'){
+			PAGE.appGroups.splice(i,1);i--;
+		}
+	}
+}
+
+		
+function disallowDomains(){
+	let e=["ezyro.com", "profreehost.com"],
+		t=document.querySelector('select[name="domain_selector"]');
+	for(let n of t.options) {
+		if(e.includes(n.text)) {
+			t.removeChild(n);
+		}
+	}
+	for(let n of t.options) {
+		if(e.includes(n.text)) {
+			t.removeChild(n);
+		}
+	}
+}
+function getOptionsParam(e){
+	let t=e;return location.search.slice(1).split("&").some((function(t){return t.split("=")[0]===e&&(e=t.split("=")[1])})),t===e?null:e
+}
+
+let e=getOptionsParam("option");
+
+if(e === 'subdomains') {
+	disallowDomains();
+}
