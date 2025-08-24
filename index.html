@@ -1,85 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karthi Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karthi | Hacking Education</title>
+  <meta name="description" content="Free, ethical hacking education: labs, tracks, cheat sheets, and tools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <a href="#" class="brand">Karthi</a>
-    <div class="navigation">
-      <a href="#main">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#services">Services</a>
-      <a href="#work">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">></span> Karthi<span class="accent">Sec</span></a>
+
+    <button id="navToggle" class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="siteNav" class="site-nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#labs">Labs</a>
+      <a href="#cheats">Cheat Sheets</a>
+      <a href="#tools">Tools</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
   </header>
 
-  <section class="main" id="main">
-    <div>
-      <h2>Hello, I’m <br><span>Karthi S</span></h2>
-      <p>Cybersecurity Enthusiast • Ethical Hacker • Network Defender</p>
-      <a href="#work" class="btn">Explore My Work</a>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <h1 class="glow">Hacking Education—Ethical. Practical. Free.</h1>
+      <p>Hands-on security learning for everyone: start with basics, level up to network, web, and blue-team skills.</p>
+      <div class="hero-actions">
+        <a href="#tracks" class="btn primary"><i class="fa-solid fa-compass"></i> Start Learning</a>
+        <a href="#labs" class="btn ghost"><i class="fa-solid fa-flask"></i> Try a Lab</a>
+      </div>
+      <p class="disclaimer">For educational and defensive purposes only. Test only what you own or have explicit permission to test.</p>
     </div>
+    <canvas id="bgMatrix" aria-hidden="true"></canvas>
   </section>
 
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>I’m passionate about cybersecurity, ethical hacking, and protecting digital systems.  
-       My journey started with hardware and networking, and now I focus on penetration testing, 
-       firewall security, and incident response.  
-       I also share my learning experiences to help others understand cybersecurity better.</p>
-  </section>
-
-  <section class="skills" id="skills">
-    <h2>Skills</h2>
-    <div class="bar">
-      <div class="info"><span>Penetration Testing</span><span>75%</span></div>
-      <div class="line" style="width:75%"></div>
-    </div>
-    <div class="bar">
-      <div class="info"><span>Network Security</span><span>85%</span></div>
-      <div class="line" style="width:85%"></div>
-    </div>
-    <div class="bar">
-      <div class="info"><span>Firewall & VPN</span><span>80%</span></div>
-      <div class="line" style="width:80%"></div>
-    </div>
-    <div class="bar">
-      <div class="info"><span>Ethical Hacking</span><span>70%</span></div>
-      <div class="line" style="width:70%"></div>
-    </div>
-  </section>
-
-  <section class="services" id="services">
-    <h2>What I Do</h2>
-    <ul>
-      <li><i class="fas fa-shield-alt"></i> Penetration Testing & Vulnerability Assessment</li>
-      <li><i class="fas fa-network-wired"></i> Secure Network Design & Hardening</li>
-      <li><i class="fas fa-user-lock"></i> Security Awareness & Training</li>
-    </ul>
-  </section>
-
-  <section class="work" id="work">
-    <h2>Projects</h2>
-    <p>Coming soon: my lab work, write-ups, and real-world security projects.</p>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p><i class="fas fa-envelope"></i> cyberresercher01@email.com</p>
-    <p><i class="fas fa-map-marker-alt"></i> Tamil Nadu, India</p>
-  </section>
-
-  <footer>
-    <p>© 2025 <a href="#">Karthi</a> – Cybersecurity Portfolio</p>
-  </footer>
-
-</body>
-</html>
+  <!-- Tracks -->
+  <section id="tracks" class="wrap">
+    <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Learning Tracks</h2>
+    <div class="grid cards">
+      <article class="card">
+        <h3>Beginner Essentials</h3>
+        <ul>
+          <li>Security mindset
